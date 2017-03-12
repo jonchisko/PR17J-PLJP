@@ -1,4 +1,4 @@
-# PR17J-PLJP
+# PR17JSPLJP
 Skupina za podatkovno rudarjenje - seminarska naloga: tema Analiza Energetike
 
 Odločili smo se, da bomo analizirali podatke s področja energetike. Podatki   
