@@ -8,3 +8,6 @@ poskusili priti do zanimivh korelacij in vizualnih prikazov področja energetike
 
 Osredotočili se bomo na naslednje teme: cene, pridobivanje, poraba, spremembe vrst virov, (kako se, če se, spreminja poraba/pridobivanje določenih virov energije. Kako se spreminjajo tržni deleži in ostale finančno povezane teme (investicije, subvencije) ter število zaposlenih glede na prej omenjeno) ...
 
+
+-dodaj podnaloge in točke za pomoč pri vmesni predstavitvi
+
