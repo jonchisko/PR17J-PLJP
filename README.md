@@ -49,4 +49,6 @@ Bilanca električne energije
 
 ![alt text](bilanca_elek_energije/img/mesecnoLetna_prevzetaKolicina.png)
 
+![alt text](bilanca_elek_energije/img/odjemSkoziLeta.png)
+
 
