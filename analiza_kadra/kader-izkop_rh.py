@@ -8,8 +8,8 @@ import pylab
 headersRV = ["Leto","Doktor znanosti","Magisterij","Fakulteta, visoka šola","Višja šola","Srednja šola - 4.letna","Delovodska šola - visokokvalificirana","Srednja šola - 3.letna","Ožji profil","Skupaj zaposleni"]
 headersIZKOP = ["leto","1000t"]
 
-dataIZKOP = np.genfromtxt("data/RVELENJE-izkop-leta.csv", delimiter='\t', skip_header=True)
-dataRV = np.genfromtxt("data/RVELENJE-kader-leta.csv", delimiter='\t', skip_header=True)
+dataIZKOP = np.genfromtxt("data/RTRBOVLJE-izkop-leta.csv", delimiter='\t', skip_header=True)
+dataRV = np.genfromtxt("data/RHRASTNIK-kader-leta.csv", delimiter='\t', skip_header=True)
 color = ["r", "b", "g", "y", "purple", "orange", "magenta", "cyan", "brown", "black"]
 
 
@@ -24,5 +24,5 @@ ax1.set_xticks(ticks)
 ax1.set_xticklabels(np.array(dataRV[:,0], dtype="int"))
 ax1.set_xlabel('Leto')
 ax1.set_ylabel('Izkop na zasposlenega (1000t)')
-ax1.set_title('Izkop na zaposlenega Velenje')
+ax1.set_title('Izkop na zaposlenega Hrastnik')
 plt.show()
