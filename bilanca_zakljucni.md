@@ -7,6 +7,7 @@ Zanima nas kolicina proizvedene energije v sloveniji in njena poraba skozi leta 
 
 Pri analizi bilance elektricne energije sem uporabil podatke iz datotek bilancaLeto.csv(vsebuje podatke o virih letno) in	bilancaMesec.csv(vsebuje podatke za vsak mesec od 2012 do 2016, zato so na nekaterih vizualizacijah tudi z temi leti omejeni podatki).
 
+Uporabil tudi uradne informacije iz strani [NEK](http://www.nek.si/sl/novinarsko_sredisce/porocila/mesecna_porocila_o_obratovanju/).
 
 
 ### Analiza
