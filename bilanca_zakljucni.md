@@ -1,5 +1,7 @@
 ## Bilanca elektricne energije
 
+Pri analizi bilance elektricne energije sem uporabil podatke iz datotek bilancaLeto.csv in	bilancaMesec.csv.
+
 ### Izguba energije
 Pri analizi bilance elektricne energije, ko sem naredil prikaz skupnega mesecnega prevzema energije in hkrati dodal izgubo energije na prenosnem omrezju, sem opazil da izguba ni nic koelirala z skupni prevzemom,zato sem se odlocil in raziskal malo, ter primerjal izgubo z povprecno temperaturo skozi leta za vsak mesec in opazil da z temperaturo pa koelira (kot lahko vidite na spodnjem grafu). Malo sem tudi raziskal zakaj taka izguba zaradi temperature in se izkaze da je izguba odvisna od več dejavnikov,...(napisat se treba)
 ![alt text](bilanca_elek_energije/img/odvisnostIzgubeZTemp.png)
