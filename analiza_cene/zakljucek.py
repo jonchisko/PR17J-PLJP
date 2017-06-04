@@ -169,20 +169,24 @@ print("dataset")
 print(dataset)
 print("razred")
 print(y)
-error = 0
-i = 0
+
 
 #print("%s %s" %(train, test))
 #dolocene vrstice in vse atribute
 min_atribut = 0
-min_error = 100000
+min_error_mean = 100000
 min_a = 0
 best_model = None
+error_sq_best = 10000000
+
 
 for a in np.arange(1, 10, 1):
     print(a)
     for atribut_start in range(4):
         for atribut_end in range(atribut_start, 4):
+            error_mean = 0
+            error_sq = 0
+            i = 0
             for model in [LinearRegression(), Lasso(alpha=a), Ridge(alpha=a)]:
                 i=0
                 for train, test in tscv.split(dataset):
@@ -195,16 +199,23 @@ for a in np.arange(1, 10, 1):
                     razredTest = np.reshape(y[test], (1, 1) )
                     hx = model.predict(dataTest)
                     #error += mean_squared_error(hx, razredTest.ravel())
-                    error += mean_absolute_error(hx, razredTest.ravel())
+                    error_mean += mean_absolute_error(hx, razredTest.ravel())
+                    error_sq += mean_squared_error(hx, razredTest.ravel())
                     #break
                     i += 1
-                error = error/i
-                if error < min_error:
-                    min_error = error
+                error_mean = error_mean/i
+                error_sq = error_sq/i
+                if error_mean < min_error_mean:
+                    min_error_mean = error_mean
                     min_atribut = [atribut_start, atribut_end]
                     min_a = a
                     best_model = model
-print("Srednja absolutna napaka, najboljsi subset atributov za napoved, vrednost alpha, model : ", min_error, min_atribut, min_a, best_model)
+                    error_sq_best = error_sq
+
+from math import sqrt
+
+print("Srednja absolutna napaka, kvad_napaka, kvad_napaka koren, najboljsi subset atributov za napoved, vrednost alpha, model : ",
+      min_error_mean, error_sq_best, sqrt(error_sq_best), min_atribut, min_a, best_model)
 print("Korelacija cene in moci elektrarn", stats.pearsonr(koncnaCena, moc))
 
 
@@ -281,18 +292,36 @@ pomembne = ["Holding Slovenske Elektrarne",
 "Elektro Celje",
 "Elektro Maribor",
 "Elektro Primorska",
-"Termoelektrarna sostanj",
 "Elektro Slovenija",
-"Elektro Gorenjska"]
+"Elektro Gorenjska","Elektro Ljubljana"
+]
 
-fig,axes = plt.subplots()
+fig,axes = plt.subplots(1,3)
+y = np.zeros(len(data[0]), dtype="float")
 for i,x in enumerate(data):
+
     if elektrarne[i] in pomembne:
-        axes.plot(leto, x, label=elektrarne[i])
-axes.legend(loc=1)
-axes.set_xlabel("Leto")
-axes.set_ylabel("Število zaposlenih")
-axes.set_title("Gibanje zaposlenih (najbolj zanimivi)")
+        style = "-."
+        if elektrarne[i] == "Elektro Gorenjska":
+            style="-"
+        axes[0].plot(leto, x, ls=style, label=elektrarne[i])
+        y+=np.array(x, dtype="float")
+axes[1].plot(leto,y,"r--", lw=3, label="sum")
+axes[0].legend(loc=1)
+axes[0].set_xlabel("Leto")
+axes[0].set_ylabel("Število zaposlenih")
+axes[0].set_title("Gibanje zaposlenih (najbolj zanimivi)")
+axes[2].set_xlabel("Leto")
+axes[2].set_ylabel("Število zaposlenih")
+axes[2].set_title("Seštevek zaposlenih Elektro")
+axes[1].set_title("Seštevek zaposlenih Elektro - večji razpon")
+axes[1].set_xlabel("Leto")
+axes[1].set_ylabel("Število zaposlenih Elektro")
+axes[2].plot(leto,y,"r--", lw=3, label="sum")
+axes[1].set_ylim([0,4050])
+for x in range(3):
+    axes[x].set_xticks(np.arange(min(leto), max(leto) + 1, 3))
+    axes[x].set_xticklabels(np.arange(min(leto), max(leto)+1, 3))
 plt.show()
 
 
@@ -388,7 +417,7 @@ Korelacija subvencij premogovnika ter koncne cene (-0.96800070000529459, 7.99612
 
 
 
-Srednja absolutna napaka, najboljsi subset atributov za napoved, vrednost alpha, model :  7.7725367418 [2, 3] 29.9 Lasso(alpha=29.900000000000002, copy_X=True, fit_intercept=True,
+Srednja absolutna napaka, kvad_napaka, kvad_napaka koren, najboljsi subset atributov za napoved, vrednost alpha, model :  7.27980276492 133.011179176 11.533047263222416 [2, 3] 39.9 Lasso(alpha=39.900000000000006, copy_X=True, fit_intercept=True,
    max_iter=1000, normalize=False, positive=False, precompute=False,
    random_state=None, selection='cyclic', tol=0.0001, warm_start=False)
 Korelacija cene in moci elektrarn (0.9429085307122419, 1.3680433898470748e-05)
