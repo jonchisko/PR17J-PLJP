@@ -179,7 +179,7 @@ min_error = 100000
 min_a = 0
 best_model = None
 
-for a in np.arange(0.1, 30, 0.1):
+for a in np.arange(1, 10, 1):
     print(a)
     for atribut_start in range(4):
         for atribut_end in range(atribut_start, 4):
@@ -379,3 +379,74 @@ axes[1].fill_between(np.arange(2005,2015,1), cena/zaposleni1, np.zeros(10), colo
 axes[1].set_xticks(np.arange(2005,2015,2))
 axes[1].set_xticklabels(np.arange(2005,2015,2))
 plt.show()
+
+
+"""
+Korelacija investicij ter koncne cene (-0.1307414096552979, 0.70159954201736052)
+Korelacija subvencij obnovljivih virov in SPTE ter koncne cene (0.9020608764310194, 0.00014610864766170738)
+Korelacija subvencij premogovnika ter koncne cene (-0.96800070000529459, 7.9961297640388697e-05)
+
+
+
+Srednja absolutna napaka, najboljsi subset atributov za napoved, vrednost alpha, model :  7.7725367418 [2, 3] 29.9 Lasso(alpha=29.900000000000002, copy_X=True, fit_intercept=True,
+   max_iter=1000, normalize=False, positive=False, precompute=False,
+   random_state=None, selection='cyclic', tol=0.0001, warm_start=False)
+Korelacija cene in moci elektrarn (0.9429085307122419, 1.3680433898470748e-05)
+Zaposleni [6608 6621 6485 6421 6364 6348 6386 6475 6545 6386 6422 6302 6255 6200]
+
+"""
+
+##########
+##########
+# PREMOG #
+##########
+##########
+
+leto = []
+lignit = []
+rjavi = []
+crni = []
+
+reader = DictReader(open("./data/IzkopEnergijaIzkopaniPremog1.csv", "rt", encoding="utf-8"))
+for row in reader:
+    leto.append(row["leto"])
+    lig = row["Lignit skupaj"]
+    rj = row["Rjavi premog skupaj"]
+    cr = row["crni premog skupaj"]
+    if lig == "?":
+        lig = 0
+    if rj == "?":
+        rj = 0
+    if cr == "?":
+        cr = 0
+    lignit.append(lig)
+    rjavi.append(rj)
+    crni.append(cr)
+
+leto = np.array(leto, dtype="int")
+lignit = np.array(lignit, dtype="float")
+rjavi = np.array(rjavi, dtype="float")
+crni = np.array(crni, dtype="float")
+#1000ton
+fig, axes = plt.subplots(1,2)
+axes[1].plot(leto,crni, color="black", label="črni premog")
+axes[1].fill_between(leto, crni, np.zeros(len(crni)), color="black", alpha=0.2)
+axes[1].plot(leto,rjavi+crni, color="orange", label="rjavi premog")
+axes[1].fill_between(leto, rjavi+crni, crni, color="orange", alpha=0.2)
+axes[1].plot(leto,lignit+rjavi+crni, color="red", label="lignit")
+axes[1].fill_between(leto, lignit+rjavi+crni, rjavi+crni, color="red", alpha=0.2)
+axes[1].legend(loc=1)
+axes[1].set_title("Gibanje izkopa premoga od 1962")
+axes[1].set_xlabel("Leto")
+axes[1].set_ylabel("izkop [1000t]")
+
+axes[0].plot(leto,crni, color="black", label="črni premog")
+axes[0].plot(leto,rjavi, color="orange", label="rjavi premog")
+axes[0].plot(leto,lignit, color="red", label="lignit")
+axes[0].legend(loc=1)
+axes[0].set_title("Gibanje izkopa premoga od 1962")
+axes[0].set_xlabel("Leto")
+axes[0].set_ylabel("izkop [1000t]")
+plt.show()
+
+
