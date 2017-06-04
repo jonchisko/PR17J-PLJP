@@ -1,7 +1,7 @@
 ## Analiza kadra
-###Opis problema:
+### Opis problema:
 Zanima nas gibanje kadra v premogovnikih in termoelektrarnah, ter primerjava med njimi. Deleži kadra po izobrazbi, vpliv subvencij na število zaposlenih in tako naprej. Podatke primerjamo tudi z količino izkopangea premoga skozi leta.
-###Podatki:
+### Podatki:
 Podatke sem si pripravil iz zgoraj omenjenih tabel. Nahajajo se v datotekah:
 - RHRASTNIK-kader-leta.csv
 - RTRBOVLJE-izkop-leta.csv
@@ -9,7 +9,7 @@ Podatke sem si pripravil iz zgoraj omenjenih tabel. Nahajajo se v datotekah:
 - RVELENJE-kader-leta.csv
 - subvecnije_rud_trbov_hrastnik_rjavi_premog.csv
 - TES-kader-leta.csv
-###Analiza:
+### Analiza:
 Na spodnjem grafu vidimo povprečen delež kadra v premogovniku Velenje. Podatki so od leta 2001 do 2014. Iz grafa je razvidno, da ima največji delež zaposlenih končano 3 ali 4 letno srednjo šolo (več kot 3/4). Zelo malo je magistrov in doktorjev znanosti, kar pa je bilo pričakovano.
 ![alt text](analiza_kadra/img/Delež_kadra_PV.png)
 Enako naresdimo še za termoelektrarno Šoštanj. Vidimo, da je več magistrov in doktorjev kot pri prejšnjem grafu a večinski delež ima še vedno 3 in 4 letna srednja šola.
