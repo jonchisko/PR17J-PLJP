@@ -18,27 +18,27 @@ Na grafu lahko razberemo, da je večino premoga, ki ga izkopljemo v Sloveniji - 
 Podatki so na voljo na OPSI spletni strani: povezava do podatkov http://www.energetika-portal.si/statistika/ . Večinoma so se uporabljali naslednji tematski sklopi, iz katerih smo nato s poizvedbami na spletni strani sestavili tabelo in jo prenesli na naše sisteme: 
 
 1. trdna goriva
-⋅⋅* izkop in energija izkopanega premoga
+   1. izkop in energija izkopanega premoga
 
 2. električna energija - količine
-⋅⋅* Bilanca električne energije na omrežju (MWh), Slovenija, mesečno
-⋅⋅* Bilanca električne energije na omrežju (GWh), Slovenija, letno
-⋅⋅* Dejanska Delovna moč elektrarn (MW), Slovenija, letno
+   2. Bilanca električne energije na omrežju (MWh), Slovenija, mesečno
+   2. Bilanca električne energije na omrežju (GWh), Slovenija, letno
+   2. Dejanska Delovna moč elektrarn (MW), Slovenija, letno
 
 3. električna energija - cene
-⋅⋅* Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, letno
-⋅⋅* Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, četrtletno
+   3. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, letno
+   3. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, četrtletno
 
 4. investicije
-⋅⋅* Investicijska vlaganja v energetske objekte (EUR), Slovenija, letno
+   4. Investicijska vlaganja v energetske objekte (EUR), Slovenija, letno
 
 5. subvencije
-⋅⋅* Subvencionirana proizvodnja električne energije iz obnovljivih virov energije in v soproizvodnji z visokim izkoristkom, Slovenija, letno
-⋅⋅* Subvencionirana proizvodnja električne energije iz domačih virov za zagotavljanje zanesljive oskrbe z električno energijo, Slovenija, letno
+   5. Subvencionirana proizvodnja električne energije iz obnovljivih virov energije in v soproizvodnji z visokim izkoristkom, Slovenija, letno
+   5. Subvencionirana proizvodnja električne energije iz domačih virov za zagotavljanje zanesljive oskrbe z električno energijo, Slovenija, letno
 
 6. zaposleni
-⋅⋅* elektrogospodarstvo
-⋅⋅* premogovništvo
+   6. elektrogospodarstvo
+   6. premogovništvo
 
 Podatki imajo občasno različne začetke in konce meritev (katerega leta se je meritev začela, katerega leta se je končala). Imajo manjkajoče podatke, ki so oznaženi z .. (dve piki). Te smo sfiltirarli ven - np.nan.
 Vsi podatki so številski.
