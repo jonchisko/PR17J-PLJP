@@ -60,11 +60,11 @@ razmerje = koncnaCena/bilanca
 axes[1].plot(leto, razmerje)
 axes[1].fill_between(leto, razmerje, np.zeros((11)), alpha=0.1)
 axes[1].set_title("Razmerje cena[EUR] in bilanca[GWh]")
-axes[1].set_ylabel("Cena[EUR]/Bil[GWh]")
+axes[1].set_ylabel("Cena/Bilanca")
 axes[1].set_xlabel("Leto")
 axes[1].set_xticks(np.array(leto, dtype="int"))
 axes[1].set_xticklabels(np.array(leto, dtype="int"))
-plt.show()
+#plt.show()
 
 
 #2)proizvodnja stroma in zaposleni
@@ -285,7 +285,7 @@ axes2.set_xlabel('Leto')
 axes2.set_ylabel('Število zaposlenih')
 axes2.set_title('Pogled razlike ("od blizu")')
 axes2.set_xticks(np.arange(2001,2015,3))
-plt.show()
+#plt.show()
 
 pomembne = ["Holding Slovenske Elektrarne",
 "Nuklearna elektrarna Krsko",
@@ -322,13 +322,14 @@ axes[1].set_ylim([0,4050])
 for x in range(3):
     axes[x].set_xticks(np.arange(min(leto), max(leto) + 1, 3))
     axes[x].set_xticklabels(np.arange(min(leto), max(leto)+1, 3))
-plt.show()
+#plt.show()
 
 
 #razlike
 razlike = []
 for i in range(len(zaposleni)-1):
-    razlike.append(zaposleni[i] - zaposleni[i+1])
+    print(zaposleni[i])
+    razlike.append(zaposleni[i+1] - zaposleni[i])
 
 razlike = np.array(razlike, dtype="float")
 fig, axes = plt.subplots()
@@ -336,6 +337,8 @@ poz = razlike.copy()
 neg = razlike.copy()
 poz[poz<0] = np.nan
 neg[neg>=0] = np.nan
+print(poz)
+print(neg)
 axes.bar(np.arange(2002,2015,1), poz, color="g", alpha=0.8)
 axes.bar(np.arange(2002,2015,1), neg, color="r", alpha=0.8)
 axes.set_title("Razlika gibanja zaposlenih")
@@ -343,7 +346,7 @@ axes.set_xlabel("Leto")
 axes.set_ylabel("Razlika v zaposlenih")
 axes.set_xticks(np.arange(2002,2015,1))
 axes.set_xticklabels(np.arange(2002,2015,1))
-plt.show()
+
 
 #2)proizvodnja stroma in zaposleni
 fig, axes = plt.subplots(1,2)
@@ -370,11 +373,11 @@ axes[0].legend(loc=1)
 axes[1].plot(np.arange(2001,2015,1), bilanca/zaposleni)
 axes[1].set_title("Razmerje bilanca, zaposleni")
 axes[1].set_xlabel("Leto")
-axes[1].set_ylabel("bilanca/zaposleni [GWh/zaposlen]")
+axes[1].set_ylabel("bilanca/zaposleni")
 axes[1].fill_between(np.arange(2001,2015,1), bilanca/zaposleni, np.zeros(14), color="b", alpha=0.2)
 axes[1].set_xticks(np.arange(2001,2015,2))
 axes[1].set_xticklabels(np.arange(2001,2015,2))
-plt.show()
+#plt.show()
 
 
 #3)cena in zaposleni
@@ -394,7 +397,7 @@ axes[0].plot(np.arange(2005,2015,1), cena, label="cena")
 axes[0].plot(np.arange(2005,2015,1), zaposleni1, label="zaposleni")
 axes[0].set_xticks(np.arange(2005,2015,2))
 axes[0].set_xticklabels(np.arange(2005,2015,2))
-axes[0].set_title("Gibanje cena, zaposlenih")
+axes[0].set_title("Gibanje cena, zaposleni")
 axes[0].set_xlabel("Leto")
 axes[0].set_ylabel("log scale")
 axes[0].set_yscale("log")
@@ -403,11 +406,11 @@ axes[0].legend(loc=1)
 axes[1].plot(np.arange(2005,2015,1), cena/zaposleni1)
 axes[1].set_title("Razmerje cena, zaposleni")
 axes[1].set_xlabel("Leto")
-axes[1].set_ylabel("cena/zaposleni [EUR/zaposlen]")
+axes[1].set_ylabel("cena/zaposleni")
 axes[1].fill_between(np.arange(2005,2015,1), cena/zaposleni1, np.zeros(10), color="b", alpha=0.2)
 axes[1].set_xticks(np.arange(2005,2015,2))
 axes[1].set_xticklabels(np.arange(2005,2015,2))
-plt.show()
+#plt.show()
 
 
 """
@@ -476,6 +479,33 @@ axes[0].legend(loc=1)
 axes[0].set_title("Gibanje izkopa premoga od 1962")
 axes[0].set_xlabel("Leto")
 axes[0].set_ylabel("izkop [1000t]")
+#plt.show()
+
+skupine = ["DA (< 1.000 kWh)", "DE ( >= 15.000 kWh)", "D - Slovenija"]
+
+vsi_ene = [[] for x in range(3)]
+leto = np.arange(2005,2016,1)
+reader = DictReader(open("./data/cene_energija.csv", "rt", encoding="utf-8"))
+for row in reader:
+    for i, skp in enumerate(skupine):
+        vsi_ene[i].append(row[skp])
+
+vsi_daj = [[] for x in range(3)]
+reader = DictReader(open("./data/cene_dajatve.csv", "rt", encoding="utf-8"))
+for row in reader:
+    for i, skp in enumerate(skupine):
+            vsi_daj[i].append(row[skp])
+
+
+for i,x in enumerate(vsi_ene):
+    vsi_ene[i] = np.array(x, dtype="float")
+for i,x in enumerate(vsi_daj):
+    vsi_daj[i] = np.array(x, dtype="float")
+
+for i,x in enumerate(vsi_ene):
+    print("ENERGIJA, porabniska skupina: ", skupine[i], " korelacija: ",stats.pearsonr(x, subvencija1))
+for i,x in enumerate(vsi_daj):
+    print("DAJATVE, porabniska skupina: ", skupine[i], " korelacija: ",stats.pearsonr(x, subvencija1))
+
+
 plt.show()
-
-
