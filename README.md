@@ -21,24 +21,24 @@ Podatki so na voljo na OPSI spletni strani: povezava do podatkov http://www.ener
    1. izkop in energija izkopanega premoga
 
 2. električna energija - količine
-   2. Bilanca električne energije na omrežju (MWh), Slovenija, mesečno
+   1. Bilanca električne energije na omrežju (MWh), Slovenija, mesečno
    2. Bilanca električne energije na omrežju (GWh), Slovenija, letno
-   2. Dejanska Delovna moč elektrarn (MW), Slovenija, letno
+   3. Dejanska Delovna moč elektrarn (MW), Slovenija, letno
 
 3. električna energija - cene
-   3. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, letno
-   3. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, četrtletno
+   1. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, letno
+   2. Cene električne energije za gospodinjstva - standardne porabniške skupine (EUR/MWh), Slovenija, četrtletno
 
 4. investicije
-   4. Investicijska vlaganja v energetske objekte (EUR), Slovenija, letno
+   1. Investicijska vlaganja v energetske objekte (EUR), Slovenija, letno
 
 5. subvencije
-   5. Subvencionirana proizvodnja električne energije iz obnovljivih virov energije in v soproizvodnji z visokim izkoristkom, Slovenija, letno
-   5. Subvencionirana proizvodnja električne energije iz domačih virov za zagotavljanje zanesljive oskrbe z električno energijo, Slovenija, letno
+   1. Subvencionirana proizvodnja električne energije iz obnovljivih virov energije in v soproizvodnji z visokim izkoristkom, Slovenija, letno
+   2. Subvencionirana proizvodnja električne energije iz domačih virov za zagotavljanje zanesljive oskrbe z električno energijo, Slovenija, letno
 
 6. zaposleni
-   6. elektrogospodarstvo
-   6. premogovništvo
+   1. elektrogospodarstvo
+   2. premogovništvo
 
 Podatki imajo občasno različne začetke in konce meritev (katerega leta se je meritev začela, katerega leta se je končala). Imajo manjkajoče podatke, ki so oznaženi z .. (dve piki). Te smo sfiltirarli ven - np.nan.
 Vsi podatki so številski.
