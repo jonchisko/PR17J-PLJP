@@ -9,7 +9,7 @@ Prej omenjena področja bomo prvo predstavili posamezno nato pa v zaključku tem
 
 Za uvod bomo predstavil gibanje izkopa premoga. Pridobivanje fosilnih goriv in proces pridobivanja energije iz teh fosilnih goriv, je postala pereča tema današnjega sveta. Saj naj bi ta proces vplival na globalne podnebne spremembe in kvaliteto zraka. 
 
-![alt text](analiza_cene/grafi/slika23)
+![alt text](analiza_cene/grafi/slika23.png)
 
 Na grafu lahko razberemo, da je večino premoga, ki ga izkopljemo v Sloveniji - rjavi premog ali lignit. Izkop rjavega premoga se v odvisnosti od časa zmanjšuje, medtem ko ima lignit dvig in nato padec, a še vedno ostaja kar visoko. Lignit se predvsem izkopava v Velenju in uporablja kot vir energije v TEŠ. Črni premog smo pridobivali v Sečovljah, a smo ga kasneje opustili. Izkop je bil majhen, okoli nekaj 10 000 ton letno. 
 
