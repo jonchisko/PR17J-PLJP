@@ -44,6 +44,7 @@ Podatki imajo občasno različne začetke in konce meritev (katerega leta se je 
 Vsi podatki so številski.
 
 ## Analiza cene električne energije
+##### Jon Škoberne
 
 ### Uvod
 
@@ -146,12 +147,12 @@ Po vseh prikazih podatkov lahko z neko stopnjo gotovosti zaključim, da je cena 
 
 
 
-## Navezava druge teme
+## Navezava na preostali temi
 
 
 ![alt text](analiza_cene/grafi/slika20.1.png)
 Iz grafa je razvidno, da se število zaposlenih v elektrogospodarstvu načeloma zmanjšuje, kar potrdi tudi naslednji graf.
-![alt text](analiza_cene/grafi/slika25)
+![alt text](analiza_cene/grafi/slika25.png)
 
 ![alt text](analiza_cene/grafi/slika21.1.png)
 Razmerje med ceno in zaposlenimi se viša: razlog število zaposlenih se počasi manjša - cena pa se povečuje hitro. 
@@ -171,6 +172,8 @@ Graf prikazuje zanimivo opazko med Elektro “podjetji”. Leta 2004 se namreč 
 
 
 ## Bilanca elektricne energije
+
+##### Peter Lozar
 
 ### Opis problema:
 Zanima nas kolicina proizvedene energije v sloveniji in njena poraba skozi leta ter ker so glavni viri elektricne energije za slovenski trg.
@@ -207,6 +210,9 @@ Za zaključek se mi je pa zdela zelo zanimiva še tale vizualizacija ki prikazuj
 
 
 ## Analiza kadra
+
+##### Jan Pogačnik
+
 ### Opis problema:
 Zanima nas gibanje kadra v premogovnikih in termoelektrarnah, ter primerjava med njimi. Deleži kadra po izobrazbi, vpliv subvencij na število zaposlenih in tako naprej. Podatke primerjamo tudi z količino izkopangea premoga skozi leta.
 ### Podatki:
