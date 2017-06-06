@@ -198,10 +198,10 @@ Iz podatkov je bilo mozno tudi dobiti informacije o mesecnem prevzemu in odjemu 
 
 Posamezni graf:
 - [Leto 2012](bilanca_elek_energije/img/sprememba2012.png)
-- [Leto 2013](bilanca_elek_energije/img/sprememba2013png)
-- [Leto 2014](bilanca_elek_energije/img/sprememba2014png)
-- [Leto 2015](bilanca_elek_energije/img/sprememba2015png)
-- [Leto 2016](bilanca_elek_energije/img/sprememba2016png)
+- [Leto 2013](bilanca_elek_energije/img/sprememba2013.png)
+- [Leto 2014](bilanca_elek_energije/img/sprememba2014.png)
+- [Leto 2015](bilanca_elek_energije/img/sprememba2015.png)
+- [Leto 2016](bilanca_elek_energije/img/sprememba2016.png)
 
 
 Za zaključek se mi je pa zdela zelo zanimiva še tale vizualizacija ki prikazuje skupni odjem skozi leta, od leta 1990 do 2015. Zanimivo je kako od osamosvojitve naprej raste poraba, in kako se strmo poveca od leta 1998 do 2005. Predvidevam da padec porabe od leta 2005 do 2007 se zgodi zarad takratne financne krize ki se je zgodila pri nas. 
